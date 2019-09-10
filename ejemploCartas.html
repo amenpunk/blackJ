@@ -1,0 +1,120 @@
+
+<!-- saved from url=(0140)https://umg.blackboard.com/bbcswebdav/pid-531971-dt-content-rid-6372112_1/courses/22019-5190-036-B/ejemploCartas.html?globalNavigation=false -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <style>
+		/*
+		//*[@id="areaMesa"]
+		*/
+
+  	html{
+		background: url("fondo.jpg");
+		}
+	  #areaMesa {
+		
+		padding:10px;
+	  }
+	  
+	  #areaContrincante {
+	    height:35%;
+	  }
+	  
+	  #areaJugador {
+	    height:35%;
+	  }
+	  
+	  .punteo{
+	    background:green;
+		text-align:center;	  
+	  }
+	  
+	  .areaCartas {
+	    background:blue;
+		height:150px;	  
+	  }
+
+	  #areaBotones{
+		background:gray;
+		height:100px;
+	  }
+	  
+	  .carta {
+		width:70px;
+		height:95px;
+		background:url(http://www.qbasicnews.com/dav/files/cards.png);		background:url(http://www.qbasicnews.com/dav/files/cards.png);
+		display:inline-block;
+	  }
+	  
+	  
+	  .perdio {
+		color:red;
+	  }
+	</style>
+	<script src="classCarta.js"></script>
+	<script src="paquete.js"></script>
+	<script src="mesa.js"></script>
+  </head>
+  <body>
+	<script>
+	  var cuentaJugador=0;
+	
+	  window.onload = function(){
+		  var objCarta = document.getElementById('micarta');
+		  objCarta.onclick = function(){
+			objCarta.className='carta carta1';
+		  }
+		  
+		  var btnDarCarta = document.getElementById('btnDarCarta');
+		  var btnDetener = document.getElementById('btnDetener');
+		  var paquete = new paqueteCartas();
+		  var mesaJugador = new mesa('cartasJugador');
+		  var mesaContrincante = new mesa('cartasContrincante');
+
+		  btnDarCarta.onclick=function(){
+			var nuevaCarta = paquete.darCarta();
+			var suma = mesaJugador.insertarCarta(nuevaCarta);
+
+			if(suma>21)
+			  document.getElementById('punteoJugador').innerHTML='PERDIO';
+		  }
+
+		  btnDetener.onclick=function(){
+		    do{
+				var nuevaCarta = paquete.darCarta();
+				var suma = mesaContrincante.insertarCarta(nuevaCarta);
+				if(suma>21)
+				  document.getElementById('punteoContrincante').innerHTML='PERDIO';			
+			}while(suma<21);
+        
+		  }
+	  }
+	</script>
+      
+    <div id="areaMesa">
+     
+	  <div id="areaContrincante">
+        <div id="punteoContrincante" class="punteo">
+          PUNTEO CONTRINCANTE
+        </div>
+		    <div id="cartasContrincante" class="areaCartas">
+			  <div class="carta carta0" id="micarta"></div>
+		  </div>
+	  </div>
+
+      <div id="areaJugador">
+        <div id="punteoJugador" class="punteo">
+          PUNTEO JUGADOR
+        </div>
+        <div id="cartasJugador" class="areaCartas">
+      </div>
+      </div>
+	  </div>
+ 
+	<div id="areaBotones" align="center">
+	  <button>Repartir</button>
+	  <button id="btnDarCarta">Dar carta</button>
+	  <button id="btnDetener">Detener</button>
+	</div>
+
+  </body>
+</html>
+
