@@ -1,0 +1,39 @@
+html{
+background: url("fondo.jpg");
+}
+
+#areaMesa {
+    padding:10px;
+}
+
+#areaContrincante {
+   height:35%;
+}
+
+#areaJugador {
+   height:35%;
+}
+.punteo{
+    background:green;
+    text-align:center;	  
+}
+
+.areaCartas {
+height:150px;	  
+} 
+
+#areaBotones{
+background:gray;
+height:100px;
+}
+
+.carta {
+    width:70px;
+    height:95px;
+    background:url(http://www.qbasicnews.com/dav/files/cards.png);
+    display:inline-block;
+}
+
+.perdio {
+    color:red;
+}
