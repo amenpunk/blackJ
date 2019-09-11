@@ -5,16 +5,30 @@
 		<script src="mesa.js"></script>
 		<script src="main.js"></script>
 		<link rel="stylesheet" type="text/css" href="index.css">
-
+		<link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
   	</head>
-  <body>
-      
-    <div id="areaMesa">
+<body>	
+
+	<div class="total">
+		<article class="title">
+			Punteo:
+		</article>
+		<article class="marcador">
+			<h3>Jugador 1:</h3>
+		</article>
+		<article  class="marcador">
+			<h3>Jugador 2:</h3>
+
+		</article>
+
+	</div>
+
+  	<div id="areaMesa">
      
 	  <div id="areaContrincante">
-		  
+
         <div id="punteoContrincante" class="punteo">
-          PUNTEO CONTRINCANTE
+           Jugardor 2
         </div>
 		
 		<div id="cartasContrincante" class="areaCartas">
@@ -25,17 +39,19 @@
 
       <div id="areaJugador">
         <div id="punteoJugador" class="punteo">
-          PUNTEO JUGADOR
+           Jugardor 2
         </div>
         <div id="cartasJugador" class="areaCartas">
-      </div>
-      </div>
+		  
+		</div>
 	  </div>
+
+	</div>
  
 	<div id="areaBotones" align="center">
-	  <button>Repartir</button>
-	  <button id="btnDarCarta">Dar carta</button>
-	  <button id="btnDetener">Detener</button>
+	  <button class="btn" >Repartir</button>
+	  <button class="btn" id="btnDarCarta">Dar carta</button>
+	  <button class="btn" id="btnDetener">Detener</button>
 	</div>
 
   </body>
