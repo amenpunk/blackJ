@@ -11,3 +11,9 @@ paqueteCartas.prototype.darCarta = function(){
   var nuevaCarta = new classCarta(numeroCarta,this.tiposCartas[simboloCarta]);
   return nuevaCarta;
 }
+
+paqueteCartas.prototype.restarPaquete = function(){
+    this.cantCartas = this.cantCartas - 1;
+    //console.log(this.cantCartas);
+    return this.cantCartas;
+}

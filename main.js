@@ -17,27 +17,34 @@ window.onload = function () {
     }
      
     var mazo = new paqueteCartas();
+    var num_mazo = mazo.cantCartas;
+    //console.log("numero de mazo" + num_mazo)
+    document.getElementById("num").innerHTML = num_mazo;
 
+    
     var btnDarCarta = document.getElementById('btnDarCarta');
     var btnDetener = document.getElementById('btnDetener');
     var btnRepartir = document.getElementById('btnRepartir');
-    var paquete = new paqueteCartas();
+   
+    //var paquete = new paqueteCartas();
     var mesaJugador = new mesa('cartasJugador');
     var mesaContrincante = new mesa('cartasContrincante');
 
-    btnRepartir.onclick = function(){
-      var paquete = new paqueteCartas();
-      console.log(paquete.cantCartas);
-    }
+    //btnRepartir.onclick = function(){
+    //  var paquete = new paqueteCartas();
+    //  console.log(paquete.cantCartas);
+    //}
 
     btnDarCarta.onclick = function () {
-        var nuevaCarta = paquete.darCarta();
+        var nuevaCarta = mazo.darCarta();
+        var total_cartas = mazo.restarPaquete();
+
         var suma = mesaJugador.insertarCarta(nuevaCarta);
         document.getElementById('ptn-uno').innerHTML = suma;
-
+        document.getElementById("num").innerHTML = total_cartas;
         //console.log(suma)
         if (suma > 21){
-        modal.style.display = "block"
+          //modal.style.display = "block"
         document.getElementById('punteoJugador').innerHTML = 'PERDIO';
         }
     }
