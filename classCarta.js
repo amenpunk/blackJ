@@ -7,7 +7,7 @@ classCarta.prototype.darNumero = function(){
 	return this.numero;
 }
 
-classCarta.prototype.dibujar = function(){
+classCarta.prototype.dibujarCarta = function(){
 	var nuevaCarta = document.createElement('div');
 	nuevaCarta.className='carta';
 	var posx = (this.numero-1)*-72;

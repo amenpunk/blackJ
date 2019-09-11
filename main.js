@@ -2,14 +2,9 @@ var cuentaJugador = 0;
 
 window.onload = function () {
 
-       // Get the modal
     var modal = document.getElementById("myModal")
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn")
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0]
-    // When the user clicks the button, open the modal 
-    // When the user clicks on <span> (x), close the modal
+    var btn =   document.getElementById("myBtn")
+    var span =  document.getElementsByClassName("close")[0]
     span.onclick = function() {
       modal.style.display = "none";
     }
@@ -28,6 +23,7 @@ window.onload = function () {
 
     var btnDarCarta = document.getElementById('btnDarCarta');
     var btnDetener = document.getElementById('btnDetener');
+    var btnRepartir = document.getElementById('btnRepartir');
     var paquete = new paqueteCartas();
     var mesaJugador = new mesa('cartasJugador');
     var mesaContrincante = new mesa('cartasContrincante');
@@ -37,7 +33,7 @@ window.onload = function () {
         var suma = mesaJugador.insertarCarta(nuevaCarta);
         document.getElementById('ptn-uno').innerHTML = suma;
 
-        console.log(suma)
+        //console.log(suma)
         if (suma > 21){
         modal.style.display = "block"
         document.getElementById('punteoJugador').innerHTML = 'PERDIO';
@@ -54,4 +50,8 @@ window.onload = function () {
         document.getElementById('ptn-dos').innerHTML = suma;
 
     }
+    btnRepartir.onclick = function(){
+       console.log("CLick");
+    }
+
 }

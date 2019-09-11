@@ -79,6 +79,10 @@ html{
    height:25%;
 }
 
+#punteoJugador , #punteoContrincante{
+    text-align: center;
+}
+
 .punteo{
     color:white;
     text-align:start;

@@ -5,7 +5,7 @@ function mesa(id){
 
 mesa.prototype.insertarCarta = function(objCarta){
 	var areaCartasJugador = document.getElementById(this.idDiv);
-	areaCartasJugador.appendChild(objCarta.dibujar());
+	areaCartasJugador.appendChild(objCarta.dibujarCarta());
 	this.suma= this.suma + objCarta.darNumero();
 	return this.suma;	
 }
