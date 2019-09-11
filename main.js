@@ -2,24 +2,21 @@ var cuentaJugador = 0;
 
 window.onload = function () {
 
+   
     var modal = document.getElementById("myModal")
-    var btn =   document.getElementById("myBtn")
     var span =  document.getElementsByClassName("close")[0]
+    
     span.onclick = function() {
       modal.style.display = "none";
     }
-    // When the user clicks anywhere outside of the modal, close it
+    
     window.onclick = function(event) {
-      if (event.target == modal) {
+      if(event.target == modal) {
         modal.style.display = "none";
       }
     }
      
-   
-    var objCarta = document.getElementById('micarta');
-    objCarta.onclick = function () {
-        objCarta.className = 'carta carta1';
-    }
+    var mazo = new paqueteCartas();
 
     var btnDarCarta = document.getElementById('btnDarCarta');
     var btnDetener = document.getElementById('btnDetener');
@@ -27,6 +24,11 @@ window.onload = function () {
     var paquete = new paqueteCartas();
     var mesaJugador = new mesa('cartasJugador');
     var mesaContrincante = new mesa('cartasContrincante');
+
+    btnRepartir.onclick = function(){
+      var paquete = new paqueteCartas();
+      console.log(paquete.cantCartas);
+    }
 
     btnDarCarta.onclick = function () {
         var nuevaCarta = paquete.darCarta();
@@ -50,8 +52,6 @@ window.onload = function () {
         document.getElementById('ptn-dos').innerHTML = suma;
 
     }
-    btnRepartir.onclick = function(){
-       console.log("CLick");
-    }
+    
 
 }

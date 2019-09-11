@@ -83,6 +83,11 @@ html{
     text-align: center;
 }
 
+.num{
+    padding-top: 35px;
+    color:#1e1e1e;
+}
+
 .punteo{
     color:white;
     text-align:start;
@@ -104,6 +109,7 @@ html{
     height:95px;
     background:url(http://www.qbasicnews.com/dav/files/cards.png);
     display:inline-block;
+    background-position-x: 72px;
 }
 
 .perdio {
@@ -128,4 +134,13 @@ html{
     padding: 5px;
     margin-right: 5%;
     background: rgba(0, 0, 0, 0.2)    
+}
+
+#t-mazo{
+    clear: both;
+    float: left;
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+    color:white;
 }
