@@ -94,6 +94,10 @@ html{
     color:#1e1e1e;
 }
 
+#myModal{
+    padding-top: 250px;
+}
+
 .punteo{
     color:white;
     text-align:start;

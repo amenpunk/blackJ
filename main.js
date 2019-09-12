@@ -49,13 +49,18 @@ window.onload = function () {
     }
 
     btnRepartir.onclick = function(){
-      
+      id = 1
       for(i=0;i<2;i++){
 
         var nuevaCarta = mazo.darCarta();
         var valora = mesaJugador.insertarCarta(nuevaCarta);
         var total_cartas = mazo.restarPaquete();
         document.getElementById('ptn-uno').innerHTML = valora;
+        
+        if (valora > 21){
+          perdio(id);
+          document.getElementById('punteoJugador').innerHTML = 'PERDIO';
+        }
 
       }
 
