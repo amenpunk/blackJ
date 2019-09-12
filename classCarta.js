@@ -28,7 +28,7 @@ classCarta.prototype.dibujarCartaEspecial = function(){
 	if(this.simbolo=="espadas") posy=96;
 	if(this.simbolo=="corazones") posy=192;
 	if(this.simbolo=="diamantes") posy=288;
-	nuevaCarta.style.backgroundPosition=posx+'px '+posy+'px';
-	nuevaCarta.classList.add("oculta");
+	nuevaCarta.style.backgroundPosition=posx+'72 '+posy+'px';
+	nuevaCarta.classList.add("toremove");
 	return nuevaCarta;
 }

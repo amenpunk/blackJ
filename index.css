@@ -25,18 +25,23 @@
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+text-align: center;
+  background-color: rgba(255,255,255,0.8);
+  color:black;
   margin: auto;
-  padding: 20px;
   border: 1px solid #888;
+  padding-top: 110px;
+  font-size: 50px;
   width: 80%;
+  height: 20%;
 }
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+    padding-right: 20px;
+  color: black;
   float: right;
-  font-size: 28px;
+  font-size: 100px;
   font-weight: bold;
 }
 
