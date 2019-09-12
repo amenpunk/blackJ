@@ -18,7 +18,6 @@ window.onload = function () {
      
     var mazo = new paqueteCartas();
     var num_mazo = mazo.cantCartas;
-    //console.log("numero de mazo" + num_mazo)
     document.getElementById("num").innerHTML = num_mazo;
 
     
@@ -30,10 +29,23 @@ window.onload = function () {
     var mesaJugador = new mesa('cartasJugador');
     var mesaContrincante = new mesa('cartasContrincante');
 
-    //btnRepartir.onclick = function(){
-    //  var paquete = new paqueteCartas();
-    //  console.log(paquete.cantCartas);
-    //}
+    btnRepartir.onclick = function(){
+      
+      for(i=0;i<2;i++){
+
+        var nuevaCarta = mazo.darCarta();
+        var valora = mesaJugador.insertarCarta(nuevaCarta);
+        var total_cartas = mazo.restarPaquete();
+        document.getElementById('ptn-uno').innerHTML = valora;
+        
+
+        var nuevaCarta = mazo.darCarta();
+        var valorb = mesaContrincante.insertarCarta(nuevaCarta);
+        document.getElementById('ptn-dos').innerHTML = valorb;
+        total_cartas = mazo.restarPaquete();
+        document.getElementById("num").innerHTML = total_cartas;
+      }
+    }
 
     btnDarCarta.onclick = function () {
         var nuevaCarta = mazo.darCarta();
@@ -42,7 +54,6 @@ window.onload = function () {
         var suma = mesaJugador.insertarCarta(nuevaCarta);
         document.getElementById('ptn-uno').innerHTML = suma;
         document.getElementById("num").innerHTML = total_cartas;
-        //console.log(suma)
         if (suma > 21){
           //modal.style.display = "block"
         document.getElementById('punteoJugador').innerHTML = 'PERDIO';
@@ -50,15 +61,16 @@ window.onload = function () {
     }
 
     btnDetener.onclick = function () {
+      
         do {
-            var nuevaCarta = paquete.darCarta();
+            var nuevaCarta = mazo.darCarta();
+            var total_cartas = mazo.restarPaquete();
             var suma = mesaContrincante.insertarCarta(nuevaCarta);
             if (suma > 21)
                 document.getElementById('punteoContrincante').innerHTML = 'PERDIO';
         } while (suma < 21);
         document.getElementById('ptn-dos').innerHTML = suma;
+        document.getElementById("num").innerHTML = total_cartas;
 
     }
-    
-
 }
