@@ -63,13 +63,14 @@ window.onload = function () {
       var valorb = mesaContrincante.insertarCarta(nuevaCarta);
       document.getElementById('ptn-dos').innerHTML = valorb;
       total_cartas = mazo.restarPaquete();
+      total_cartas = mazo.restarPaquete();
       document.getElementById("num").innerHTML = total_cartas;
 
 
-      var nuevaCarta = mazo.darCarta();
+      var nuevaCarta = mazo.darCartaEspecial();
       var valorc = mesaContrincante.insertarCartaEspecial(nuevaCarta);
       //document.getElementById('ptn-dos').innerHTML = valorb;
-      total_cartas = mazo.restarPaquete();
+      //total_cartas = mazo.restarPaquete();
 
         btnRepartir.disabled = true;
         btnRepartir.classList.add("noesta");

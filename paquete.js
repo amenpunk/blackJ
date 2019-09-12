@@ -12,6 +12,16 @@ paqueteCartas.prototype.darCarta = function(){
   return nuevaCarta;
 }
 
+paqueteCartas.prototype.darCartaEspecial = function(){
+  var numeroCarta =0;
+  //console.log(numeroCarta + "from paquete");
+  var simboloCarta = Math.ceil(Math.random()*3);  
+  var nuevaCarta = new classCarta(numeroCarta,this.tiposCartas[simboloCarta]);
+  return nuevaCarta;
+}
+
+
+
 paqueteCartas.prototype.restarPaquete = function(){
     this.cantCartas = this.cantCartas - 1;
     //console.log(this.cantCartas);
