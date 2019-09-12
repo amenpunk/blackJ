@@ -1,8 +1,7 @@
 var cuentaJugador = 0;
 
 window.onload = function () {
-
-   
+  
     var modal = document.getElementById("myModal")
     var span =  document.getElementsByClassName("close")[0]
     
@@ -28,6 +27,10 @@ window.onload = function () {
     //var paquete = new paqueteCartas();
     var mesaJugador = new mesa('cartasJugador');
     var mesaContrincante = new mesa('cartasContrincante');
+    
+    function perdio(){
+        modal.style.display = "block"
+    }
 
     btnRepartir.onclick = function(){
       
@@ -37,7 +40,6 @@ window.onload = function () {
         var valora = mesaJugador.insertarCarta(nuevaCarta);
         var total_cartas = mazo.restarPaquete();
         document.getElementById('ptn-uno').innerHTML = valora;
-        
 
         var nuevaCarta = mazo.darCarta();
         var valorb = mesaContrincante.insertarCarta(nuevaCarta);
@@ -45,6 +47,8 @@ window.onload = function () {
         total_cartas = mazo.restarPaquete();
         document.getElementById("num").innerHTML = total_cartas;
       }
+        btnRepartir.disabled = true;
+        btnRepartir.classList.add("noesta");
     }
 
     btnDarCarta.onclick = function () {
@@ -74,3 +78,5 @@ window.onload = function () {
 
     }
 }
+
+

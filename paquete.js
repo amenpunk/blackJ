@@ -6,7 +6,7 @@ function paqueteCartas(){
 
 paqueteCartas.prototype.darCarta = function(){
   var numeroCarta = Math.ceil(Math.random()*13);
-  console.log(numeroCarta + "from paquete");
+  //console.log(numeroCarta + "from paquete");
   var simboloCarta = Math.ceil(Math.random()*3);  
   var nuevaCarta = new classCarta(numeroCarta,this.tiposCartas[simboloCarta]);
   return nuevaCarta;
