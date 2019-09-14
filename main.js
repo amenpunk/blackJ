@@ -57,7 +57,7 @@ window.onload = function () {
         var total_cartas = mazo.restarPaquete();
         document.getElementById('ptn-uno').innerHTML = valora;
         
-        if (valora > 21){
+        if (valora >= 21){
           perdio(id);
           document.getElementById('punteoJugador').innerHTML = 'PERDIO';
         }
@@ -95,7 +95,7 @@ window.onload = function () {
         var suma = mesaJugador.insertarCarta(nuevaCarta);
         document.getElementById('ptn-uno').innerHTML = suma;
         document.getElementById("num").innerHTML = total_cartas;
-        if (suma > 21){
+        if (suma >= 21){
           perdio(id);
           document.getElementById('punteoJugador').innerHTML = 'PERDIO';
         }
